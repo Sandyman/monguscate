@@ -16,10 +16,10 @@ your own "value to xor with", or even to pass in your own functions for xor() an
 ## Usage
 
   ```
-  var obfuscate = require('monguscate').obfuscate
+  var obfuscate = require('monguscate').obfuscate;
   var x = '54f457292f559f0761000003';   // This is what an ObjectID looks like as a String
   var obfuscated_x = obfuscate(x);
-  console.log('ObjectID ', x, 'obfuscated ObjectID', obfuscated_x);
+  console.log('ObjectID ', x, 'obfuscated ObjectID ', obfuscated_x);
   ```
 
 ## Tests
