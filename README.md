@@ -8,7 +8,7 @@ expose anything to the outside world, and this helps you keep your IDs a bit mor
 
 ## Installation
 
-  npm install monguscate --save
+  ```npm install monguscate --save```
 
 ## Usage
 
