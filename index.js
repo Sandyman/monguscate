@@ -36,7 +36,7 @@ function f_swap(split, val) {
 /**
  * Obfuscates an ObjectId. This method is reversible, so that:
  *
- *   obfuscate(split,xor,obfuscate(split,xor,some_string)) === some_string
+ *   obfuscate(obfuscate(some_string, split), split) === some_string
  *
  * @param {String} id
  * @param {Number} split
