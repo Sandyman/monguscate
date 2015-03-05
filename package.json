@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Sandyman/monguscate/issues"
   },
-  "homepage": "https://github.com/Sandyman/monguscate",
+  "homepage": "http://www.monguscate.info",
   "dependencies": {
     "string": "~3.0.0"
   },
