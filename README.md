@@ -1,10 +1,13 @@
 Monguscate
 ==========
 
-Simple tool for obsfucating ObjectID used by MongoDB
+Simple tool for obsfucating ObjectID used by MongoDB.
 
 Use this utility to obfuscate ObjectID issued by MongoDB when you use them in your API. It's always a good idea not to
 expose anything to the outside world, and this helps you keep your IDs a bit more secure.
+
+This is the first incarnation of the module. I am planning on making it more flexible, e.g., by allowing to pass in
+your own "value to xor with", or even to pass in your own functions for xor() and swap().
 
 ## Installation
 
