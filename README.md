@@ -12,11 +12,16 @@ expose anything to the outside world, and this helps you keep your IDs a bit mor
 
 ## Usage
 
-  t.b.d.
+  ```
+  var obfuscate = require('monguscate').obfuscate
+  var x = '54f457292f559f0761000003';   // This is what an ObjectID looks like as a String
+  var obfuscated_x = obfuscate(x);
+  console.log('ObjectID ', x, 'obfuscated ObjectID', obfuscated_x);
+  ```
 
 ## Tests
 
-  t.b.d.
+  ```npm test```
 
 ## Release History
 
