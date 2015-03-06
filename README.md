@@ -1,7 +1,7 @@
 Monguscate
 ==========
 
-Simple tool for obsfucating ObjectID used by MongoDB.
+Simple tool for obsfucating ObjectID used by MongoDB. The name is a really lame contraction of mongo and obfuscate. :P
 
 Use this utility to obfuscate ObjectID issued by MongoDB when you use them in your API. It's always a good idea not to
 expose anything to the outside world, and this helps you keep your IDs a bit more secure.
