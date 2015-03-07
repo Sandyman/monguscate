@@ -1,8 +1,8 @@
 var should = require('chai').should();
 var obfuscate = require('../index').obfuscate;
+var mongoose = require('mongoose');
 
 describe('Obfuscate', function() {
-  // First test with default split value of 12
   it('All 0s', function() {
     obfuscate('000000000000000000000000').should.equal('d00000000000d00000000000');
   });
@@ -27,7 +27,7 @@ describe('Obfuscate', function() {
     obfuscate('540000000020a60000000000').should.equal('760000000000840000000020');
   });
 
-  it ('An actual ObjectID', function() {
+  it ('Something resembling an actual ObjectId', function() {
     obfuscate('54f457292f559f0761000003').should.equal('4f076100000384f457292f55');
   });
 
@@ -36,9 +36,9 @@ describe('Obfuscate', function() {
     obfuscate(obfuscate(x)).should.equal(x);
   });
 
-  // Now test with a split value that is less than 24, but differs from 12
-  // T.B.D.
-
-  // Now test with a split value that is more than 24 (which is treated internally as %24)
-  // T.B.D.
+  it ('Real ObjectId', function() {
+    var id = mongoose.Types.ObjectId().toString();
+    var od = obfuscate(id);
+    obfuscate(od).should.equal(id);
+  });
 });

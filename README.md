@@ -29,3 +29,4 @@ your own "value to xor with", or even to pass in your own functions for xor() an
 ## Release History
 
 * 0.1.0 Initial release
+* 0.2.0 Swap function only allows swapping both halves, because it must be a symmetrical function

@@ -3,7 +3,9 @@
  * Copyright (c) 2015 Sander Huijsen
  * MIT Licensed
  */
-var S = require("string");
+var S = require("string");  // Some helper functions for string manipulation
+
+var split_point = 12; // Half the length of a Mongo ObjectId, because swapping must be symmetrical
 
 /**
  * XORs the left-most character of the input string with xor_val
@@ -23,14 +25,12 @@ function f_xor(val) {
 /**
  * Splits a string and swaps both parts
  *
- * @param {Number} split
  * @param {String} val
  * @return {String}
  */
-function f_swap(split, val) {
+function f_swap(val) {
 
-  var y = val.length - split;
-  return S(val).right(split) + S(val).left(y);
+  return S(val).right(split_point) + S(val).left(split_point);
 }
 
 /**
@@ -43,11 +43,9 @@ function f_swap(split, val) {
  * @return {String}
  */
 function obfuscate(id, split) {
-  // 24 is the length of a regular ObjectID
+  // 24 is the length of  a regular ObjectID. Only obfuscate if the length is correct.
   if (24 === id.length) {
-    var split_val = 'undefined' !== typeof split ? (split % 24) : 12;
-
-    return f_xor(f_swap(split_val, f_xor(id)));
+    return f_xor(f_swap(f_xor(id)));
   }
 
   // Return input value if length !== 24
