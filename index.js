@@ -30,19 +30,23 @@ function f_xor(val) {
  */
 function f_swap(val) {
 
-  return S(val).right(split_point) + S(val).left(split_point);
+  var l = S(val).left(split_point);
+  var r = S(val).right(split_point);
+  var sl = l.right(split_point/2) + l.left(split_point/2);
+  var sr = r.right(split_point/2) + r.left(split_point/2);
+
+  return sr + sl;
 }
 
 /**
  * Obfuscates an ObjectId. This method is reversible, so that:
  *
- *   obfuscate(obfuscate(some_string, split), split) === some_string
+ *   obfuscate(obfuscate(some_string)) === some_string
  *
  * @param {String} id
- * @param {Number} split
  * @return {String}
  */
-function obfuscate(id, split) {
+function obfuscate(id) {
   // 24 is the length of  a regular ObjectID. Only obfuscate if the length is correct.
   if (24 === id.length) {
     return f_xor(f_swap(f_xor(id)));
