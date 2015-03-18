@@ -15,6 +15,26 @@ your own "value to xor with", or even to pass in your own functions for xor() an
 
 ## Usage
 
+#### Version \>= 1.0.0
+  ```
+  // You can create your own swap and xor methods (not mandatory)
+  var my_swap = function (x) {
+    // swap x in some manner (must be symmetrical)
+  };
+  var my_xor = function (x) {
+    // Perform xor on x in some manner
+  };
+
+  var O = require('monguscate');
+  O.setXorCallback(my_xor);     // override the default xor method
+  O.setSwapCallback(my_swap);   // override the default swap method
+
+  var x = '54f457292f559f0761000003';   // This is what an ObjectID looks like as a String
+  var obfuscated_x = O.obfuscate(x);
+  console.log('ObjectID ', x, 'obfuscated ObjectID ', obfuscated_x);
+  ```
+
+#### Version \<= 0.2.1
   ```
   var obfuscate = require('monguscate').obfuscate;
   var x = '54f457292f559f0761000003';   // This is what an ObjectID looks like as a String
