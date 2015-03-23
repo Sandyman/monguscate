@@ -7,7 +7,7 @@ Use this utility to obfuscate ObjectID issued by MongoDB when you use them in yo
 expose anything to the outside world, and this helps you keep your IDs a bit more secure.
 
 You can now pass in your own function for swapping and xor'ing. You have to bear in mind, though, that the swap 
-function should be "symmetrical". Basically, this means that swap_func(swap_func(x)) === x. In a real project, you 
+function should be "symmetrical". Basically, this means that ```swap_func(swap_func(x)) === x```. In a real project, you 
 would send an obfuscated version of x, which is de-obfuscated by obfuscating that value again.
 
 Internally, the obfuscating function works like this: 
