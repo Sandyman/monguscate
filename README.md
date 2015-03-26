@@ -30,6 +30,8 @@ should evaluate to true.
 
 #### Version \>= 1.0.0
   ```
+  var Obfuscate = require('monguscate');
+
   // You can create your own swap and xor methods (not mandatory)
   var my_swap = function (x) {
     // swap x in some manner (must be symmetrical)
@@ -38,7 +40,7 @@ should evaluate to true.
     // Perform xor on x in some manner
   };
 
-  var O = require('monguscate');
+  var O = new Obfuscate();
   O.setXorCallback(my_xor);     // override the default xor method
   O.setSwapCallback(my_swap);   // override the default swap method
 
@@ -65,3 +67,5 @@ should evaluate to true.
 * 0.2.0 Swap function only allows swapping both halves, because it must be a symmetrical function
 * 1.0.0 Added functionality to add your own swap and xor methods
 * 1.0.1 Updated README.
+* 1.0.2 Updated README: fixed a bug in the example.
+
