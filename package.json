@@ -15,18 +15,17 @@
     "ObjectId",
     "obfuscate"
   ],
-  "author": "Sander Huijsen <sander.huijsen@gmail.com> (http://www.monguscate.info)",
+  "author": "Sander Huijsen <sander.huijsen@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sandyman/monguscate/issues"
   },
-  "homepage": "http://www.monguscate.info",
   "dependencies": {
     "string": "~3.0.0"
   },
   "devDependencies": {
-    "chai": "^2.1.1",
-    "mocha": "^2.1.0",
-    "mongoose": "~3.6.13"
+    "chai": "^2.3.0",
+    "mocha": "^2.5.3",
+    "mongoose": "^5.0.8"
   }
 }
